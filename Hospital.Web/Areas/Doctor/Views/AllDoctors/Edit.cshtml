@@ -1,0 +1,57 @@
+﻿@model Hospital.ViewModels.DoctorViewModel
+
+@{
+  ViewData["Title"] = "Edit";
+}
+
+
+
+<h4>Edytowanie lekarza</h4>
+<hr />
+<div class="row">
+  <div class="col-md-4">
+    <form asp-action="Edit">
+      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+      <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+      </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Specialization" class="control-label"></label>
+                <input asp-for="Specialization" class="form-control" />
+                <span asp-validation-for="Specialization" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PWZNumber" class="control-label"></label>
+                <input asp-for="PWZNumber" class="form-control" />
+                <span asp-validation-for="PWZNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SortBy" class="control-label"></label>
+                <select asp-for="SortBy" class="form-control">
+                    <option value="Name">Name</option>
+                    <option value="Specialization">Specialization</option>
+                </select>
+            </div>
+      <div class="form-group">
+        <input type="submit" value="Zapisz" class="btn btn-primary" />
+      </div>
+    </form>
+  </div>
+</div>
+
+<div>
+  <a asp-action="Index">Powrót do listy</a>
+</div>
+
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,56 @@
+﻿@model Hospital.ViewModels.TimingViewModel
+
+@{
+  ViewData["Title"] = "Edit";
+}
+
+
+
+<h4>Szczegóły harmonogramu</h4>
+<hr />
+<div class="row">
+  <div class="col-md-4">
+
+    <div class="form-group">
+      <label>Schedule Date:</label>
+      <label asp-for="ScheduleDate" class="control-label">@Model.ScheduleDate</label>
+    </div>
+    <div class="form-group">
+      <label>Morning Shift Start Time:</label>
+      <label asp-for="MorningShiftStartTime" class="control-label">@Model.MorningShiftStartTime</label>
+    </div>
+    <div class="form-group">
+      <label>Morning Shift End Time:</label>
+      <label asp-for="MorningShiftEndTime" class="control-label">@Model.MorningShiftEndTime</label>
+    </div>
+    <div class="form-group">
+      <label>Afternoon Shift Start Time:</label>
+      <label asp-for="AfternoonShiftStartTime" class="control-label">@Model.AfternoonShiftStartTime</label>
+    </div>
+    <div class="form-group">
+      <label>Afernoon Shift End Time:</label>
+      <label asp-for="AfternoonShiftEndTime" class="control-label">@Model.AfternoonShiftEndTime</label>
+    </div>
+    <div class="form-group">
+      <label>Duration:</label>
+      <label asp-for="Duration" class="control-label">@Model.Duration</label>
+    </div>
+    <div class="form-group">
+      <label>Status:</label>
+      <label asp-for="Status" class="control-label">@Model.Status</label>
+    </div>
+    <div class="form-group">
+      <label>Doctor:</label>
+      <label asp-for="Doctor.Name" class="control-label">@Model.Doctor.Name</label>
+    </div>
+  </div>
+</div>
+
+<div>
+  <a asp-action="Index">Powrót do listy</a>
+</div>
+
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,148 @@
+
+
+@media (max-width: 768px) {
+    html, body {
+        font-size: 14px;
+    }
+}
+
+
+#content {
+    padding: 20px;
+}
+
+
+/
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+body {
+    background: linear-gradient(to bottom, #87ceeb, #add8e6);
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+header {
+    background-color: #444;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(1, 1, 1, 1);
+}
+
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 20px;
+    }
+
+
+section {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.background {
+    transition: background-color 0.5s ease;
+}
+
+    .background:hover {
+        background-color: #f1f1f1; 
+    }
+
+
+.text {
+    transition: color 0.4s ease, font-size 0.4s ease;
+}
+
+    .text:hover {
+        color: #ff0000; 
+        font-size: 18px; 
+    }
+
+
+.dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+    .dropdown.active {
+        max-height: 200px; 
+    }
+
+
+
+/* Stylowanie tabeli */
+table {
+    border-collapse: collapse; /* Usuwa domyœlne odstêpy miêdzy komórkami */
+    width: 100%;
+}
+
+/* Stylowanie komórek nag³ówka */
+th {
+    background-color: #f2f2f2; /* Kolor t³a dla nag³ówków */
+    color: #333; /* Kolor tekstu */
+    font-weight: bold; /* Pogrubienie tekstu */
+    padding: 8px; /* Wewnêtrzny odstêp */
+    text-align: left; /* Wyrównanie tekstu do lewej */
+}
+
+/* Stylowanie komórek danych */
+td {
+    border: 1px solid #ddd; /* Ramka dla komórek danych */
+    padding: 8px; /* Wewnêtrzny odstêp */
+    text-align: left; /* Wyrównanie tekstu do lewej */
+}
+
+/* Zmiana koloru t³a na przemian dla wierszy */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Kolor t³a dla parzystych wierszy */
+}

@@ -1,0 +1,101 @@
+﻿@using hospitals.Utilities
+@model PagedResult<Hospital.ViewModels.TimingViewModel>
+
+@{
+  ViewData["Title"] = "Index";
+}
+
+<h1>Harmonogram</h1>
+
+<p>
+  <a asp-action="AddTiming">Utworz nowy</a>
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="2" />
+      <th colspan="2" style="text-align:center">Porannna zmiana</th>
+      <th colspan="2" style="text-align:center">Wieczorna zmiana</th>
+      <th colspan="3" />
+    </tr>
+
+    <tr>
+      <th>
+        Doktor
+      </th>
+      <th>
+        Data
+      </th>
+      <th>
+        Rozpoczecie
+      </th>
+      <th>
+        Koniec
+      </th>
+      <th>
+        Rozpoczecie
+      </th>
+      <th>
+        Koniec
+      </th>
+      <th>
+        Czas trwania
+      </th>
+      <th>
+        Status
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model.Data)
+    {
+      <tr>
+
+        <td>
+          @Html.DisplayFor(modelItem => item.Doctor.Name)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.ScheduleDate)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.MorningShiftStartTime)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.MorningShiftEndTime)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.AfternoonShiftStartTime)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.AfternoonShiftEndTime)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Status)
+        </td>
+
+        <td>
+          @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }) |
+          @Html.ActionLink("Szczegóły", "Details", new { id = item.Id }) |
+          @Html.ActionLink("Usuń", "Delete", new { id = item.Id })
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<cs-pager cs-paging-pagesize=(int)Model.PageSize
+          cs-paging-pagenumber=(int)Model.PageNumber
+          cs-paging-totalitems=(int)Model.TotalItems
+          cs-pagenumber-param="pageNumber"
+          asp-controller="Hospitals"
+          asp-action="Index"
+          cs-pager-li-current-class="page-item active"
+          cs-pager-li-other-class="page-item"
+          cs-pager-li-non-active-class="page-item disabled"
+          cs-pager-link-current-class="page-link"
+          cs-pager-link-other-class="page-link">
+</cs-pager>
